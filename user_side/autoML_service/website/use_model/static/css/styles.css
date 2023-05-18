@@ -1,0 +1,196 @@
+body {
+    height: 100%;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    top: 56px;
+    bottom: 0;
+    width: 100%;
+}
+
+.use-model-nav {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 60px;
+    padding-top: 1rem;
+    background-color: rgb(25, 53, 79);
+}
+
+.use-model-nav-choice {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.use-model-nav-choice:hover {
+    color: black;
+}
+
+.use-model-nav-break {
+    width: 90%;
+    height: 1px;
+    margin: 0.5rem 0;
+    align-self: center;
+    background-color: gray;
+}
+
+.model-info-section {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(43, 77, 109);
+}
+
+.model-info-container {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 1rem;
+}
+
+.model-info-heading,
+.get-model-header {
+    margin: 0;
+    margin-bottom: 0.5rem;
+    align-self: center;
+    color: white;
+}
+
+.model-info {
+    margin: 0;
+    align-self: center;
+    text-align: center;
+    color: antiquewhite;
+    white-space: nowrap;
+}
+
+.model-info-break {
+    width: 50%;
+    height: 5px;
+    background-color: white;
+    align-self: center;
+    margin: 0;
+    margin-top: 0.5rem;
+}
+
+.prediction-section,
+.get-model-section,
+.configure-automl-section,
+.upload-dataset-section,
+.task-configured-section {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(72, 114, 153);
+    width: 100%;
+    padding-left: 1rem;
+}
+
+.configure-automl-section,
+.upload-dataset-section,
+.select-framework-section {
+    width: 33%;
+}
+
+.model-name-heading,
+.get-model-heading,
+.configure-automl-heading,
+.select-framework-heading,
+.upload-dataset-heading {
+    color: rgb(23, 35, 46);
+}
+
+.use-model-container {
+    display: flex;
+    flex-direction: row;
+    margin-left: 1rem;
+}
+
+.new-data-form,
+.prediction-container {
+    display: inline-flex;
+    flex-direction: column;
+    width: 20rem;
+}
+
+.feature-container,
+.class-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 0.5rem;
+}
+
+.feature-name,
+.class-name {
+    padding: 0;
+    margin: 0;
+    margin-right: 0.5rem;
+    align-self: center;
+}
+
+.feature-field,
+.class-value {
+    padding: 0;
+    margin: 0;
+    padding-left: 0.5rem;
+    width: 10rem;
+    height: 1.5rem;
+    background-color: rgb(206, 215, 221);
+    border: 1px solid gray;
+    -ms-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+.submit-button-container {
+    margin-left: 7rem;
+    margin-right: 7rem;
+}
+
+.new-data-submit {
+    width: 10.5rem;
+    height: 2rem;
+    margin-top: 5rem;
+    align-self: flex-end;
+    border: 1px solid gray;
+    background-color: rgb(23, 35, 46);
+    color: rgb(192, 201, 212);
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.new-data-submit:hover {
+    background-color: rgb(43, 77, 109);
+    color: black;
+}
+
+
+.class-container {
+    display: flex;
+}
+
+.class-name {
+    margin-right: 0;
+    margin-left: 0.5rem;
+}
+
+.class-value {
+    display: flex;
+    background-color: rgb(205, 202, 202);
+    color: black;
+    align-items: center;
+    font-weight: normal;
+}
+
+.feature-heading,
+.prediction-heading {
+    width: min-content;
+    align-self: center;
+    justify-self: center;
+    text-align: center;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid white;
+    color: rgb(211, 196, 196);
+}

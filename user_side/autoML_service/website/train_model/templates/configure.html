@@ -1,0 +1,63 @@
+{% extends "base.html" %} 
+
+{% block styles %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('useModelViews.static', filename='css/styles.css') }}"
+/>
+{% endblock %}  
+
+{% block content %}
+<div class="content">
+
+    {% include 'model_navigation_bar.html' %}
+    <section class="upload-dataset-section">
+        <h2 class="upload-dataset-heading">Upload Your Dataset</h2>
+        <form method="POST" enctype="multipart/form-data">
+            {{ upload_form.hidden_tag() }}
+
+            <p>Upload dataset</p>{{ upload_form.dataset(accept=".csv") }}
+            
+            <br>
+            {% if data_uploaded==false  %}
+                {{ upload_form.submit() }}
+            {% endif %}
+        </form>
+    </section>
+
+    <section class="configure-automl-section">
+        <h2 class="configure-automl-heading">Configure Task</h2>
+        {% if data_uploaded==true %}
+        <form method="POST" enctype="multipart/form-data">
+          {{ configure_form.hidden_tag() }}
+
+          <p>Model name</p> {{ configure_form.name()}}
+          <p>{{ configure_form.target.label }}</p> {{ configure_form.target() }}
+          <p>{{ configure_form.task.label }}</p> {{ configure_form.task() }}
+          <p>{{ configure_form.time.label }}</p> {{ configure_form.time() }}
+          <br>
+            {% if task_configured==false %}
+              {{ configure_form.submit() }}
+            {% endif %}
+        </form>
+        {% endif %}
+    </section>
+
+    <section class="select-framework-section">
+        <h2 class="select-framework-heading">Select Framework</h2>
+
+        {% if task_configured==true %}
+            {{ rankings | safe }}
+
+        <form method="POST" enctype="multipart/form-data">
+          {{ select_framework_form.hidden_tag() }}
+
+          <p>{{ select_framework_form.autoML.label }}</p> {{ select_framework_form.autoML() }} 
+          <br>
+              {{ select_framework_form.submit() }}
+        </form>
+        {% endif %}
+    </section>
+
+</div>
+{% endblock %}

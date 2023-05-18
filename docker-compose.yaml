@@ -1,0 +1,31 @@
+services:
+  user-side:
+    build: ./user_side/
+    container_name: automl-service-user-side-container
+    command: main.py
+    ports:
+      - 5000:5000
+    volumes:
+      - "./user_side/:/app"
+      - static-content:/exchange
+    environment:
+      - PYTHONUNBUFFERED=1
+
+  framework-side:
+    build: ./framework_side/
+    container_name: automl-service-framework-side-container
+    command: main.py
+    ports:
+      - 5001:5000
+    volumes:
+      - "./framework_side/:/app"
+      - static-content:/exchange
+    environment:
+      - PYTHONUNBUFFERED=1
+
+volumes:
+  static-content:
+
+networks:
+  default:
+   name: automl-service

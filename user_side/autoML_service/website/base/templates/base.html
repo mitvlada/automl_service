@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" conten="width=device-width" , inital-scale="1" />
+    <title>AutoML Service</title>
+
+    {% block styles %}
+    {% endblock %}
+    <link
+      rel="stylesheet"
+      href="{{ url_for('trainModelViews.static', filename='css/styles.css') }}"
+    />
+
+  </head>
+  <body>
+    {% include 'navigation_bar.html' %}
+    {% block content %}
+    {% endblock %}
+  </body>
+</html>

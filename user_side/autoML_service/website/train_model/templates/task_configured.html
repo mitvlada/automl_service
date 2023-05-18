@@ -1,0 +1,21 @@
+{% extends "base.html" %} 
+
+{% block styles %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('useModelViews.static', filename='css/styles.css') }}"
+/>
+{% endblock %}  
+
+{% block content %}
+<div class="content">
+  {% include 'model_navigation_bar.html' %}
+  <section class="task-configured-section">  
+  <p>You have configured the task for AutoML service.</p>
+    <br>
+    <p>The framework side will read configured parameters from <a href="{{ url_for('trainModelViews.messageTaskView') }}">here</a>.</p>
+    <br>
+    <p>Please note that new "Train model" action will overwrite any previously configured parameters.</p>
+  </section>
+  </div>
+{% endblock %}

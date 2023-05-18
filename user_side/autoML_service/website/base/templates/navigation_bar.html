@@ -1,0 +1,17 @@
+
+<header>
+    <div class="navigation-container">
+        <a class="navigation-logo" href={{ url_for('baseViews.homeView') }}>AutoML Service</a>
+        <ul class = "navigation-bar">
+            <li class="navigation-choice">
+                <a class="navigation-choice-link" href={{ url_for('trainModelViews.configureTaskView') }}>Train New Model</a>
+            </li>
+            <li class="navigation-choice">
+                <a class="navigation-choice-link" href={{ url_for('useModelViews.getModelView') }}>Use Trained Model</a>
+            </li>
+            <li class="navigation-choice">
+                <a class="navigation-choice-link" href={{ url_for('baseViews.aboutView') }}>About</a>
+            </li>
+        </ul>
+    </div>
+</header>

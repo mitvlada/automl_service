@@ -1,0 +1,148 @@
+body {
+    background-color: rgb(72, 114, 153);
+    margin: 0;
+}
+
+form {
+    width: 15rem;
+    display: flex;
+    flex-direction: column;
+}
+
+p {
+    padding: 0;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    color: #FFECDB;
+    font-weight: bold;
+}
+
+.intro {
+    text-align: center;
+}
+
+#submit,
+#download {
+    margin-top: 1rem;
+    height: 1.5rem;
+    width: 10rem;
+    background-color: rgb(3, 29, 54);
+    color: antiquewhite;
+    border-radius: 5px;
+    /* margin-bottom: 1rem; */
+}
+
+#submit:hover,
+#download:hover {
+    background-color: antiquewhite;
+    color: rgb(3, 29, 54);
+    ;
+}
+
+
+.header {
+    color: rgb(3, 29, 54);
+    text-align: center;
+    height: 56px;
+}
+
+.navigation-container {
+    display: flex;
+    padding: 1rem 0;
+    background-color: rgb(3, 29, 54);
+    width: 100%;
+}
+
+.navigation-logo {
+    margin-left: 1rem;
+    width: 20%;
+    text-decoration: none;
+    color: white;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.navigation-bar {
+    display: flex;
+    justify-content: flex-end;
+    width: 80%;
+    padding: 0;
+    margin: 0;
+    margin-right: 1rem;
+    list-style: none;
+}
+
+.navigation-choice {
+    margin: 0 1rem;
+}
+
+.navigation-choice-link {
+    text-decoration: none;
+    color: white;
+    font-size: 1.3rem;
+}
+
+.navigation-choice-link:hover {
+    color: black;
+}
+
+
+table {
+    /* font-family: arial, sans-serif; */
+    border-collapse: collapse;
+    width: 15rem;
+    margin-bottom: 1rem;
+
+}
+
+caption {
+    text-align: left;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    color: #FFECDB;
+    /* font-size: 1rem; */
+    font-weight: bold;
+}
+
+th {
+    background-color: rgb(5, 53, 79);
+    color: #FFECDB;
+}
+
+td,
+th {
+    /* border: 1px solid #dddddd; */
+    text-align: center;
+    font-size: 0.9rem;
+    /* padding: 8px; */
+}
+
+
+tr:nth-child(odd) {
+    /* background-color: #dddddd; */
+    color: rgb(23, 35, 46);
+}
+
+tr:nth-child(even) {
+    background-color: rgb(5, 53, 79);
+    color: #FFECDB;
+}
+
+
+
+.table-column-rank {
+    width: 20%;
+}
+
+.table-column-framework {
+    width: 40%;
+}
+
+.table-column-performance {
+    width: 40%;
+}
+
+.about {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}

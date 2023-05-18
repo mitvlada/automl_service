@@ -1,0 +1,42 @@
+{% extends "base.html" %} 
+
+{% block styles %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('useModelViews.static', filename='css/styles.css') }}"
+/>
+{% endblock %}
+
+{% block content %}
+
+  <div class="content">
+
+    {% include 'model_navigation_bar.html' %}
+
+    <section class="get-model-section">
+      <h2 class="get-model-heading">Select Trained Model</h2>
+
+      {% if models_exist %}
+        <form method="POST" enctype="multipart/form-data">
+            {{ form.hidden_tag() }}
+            <p>{{ form.model.label }}</p> {{ form.model() }}
+            {% with messages = get_flashed_messages() %}
+              {% if messages %}
+                  {% for message in messages %}
+                    <p>{{ message }}</p>
+                  {% endfor %}
+              {% endif %}
+            {% endwith %}
+            <br>
+            {{ form.submit() }} 
+            {{ form.download() }}
+          </form>
+        {% else %}
+          <p>No trained models have been found</p>
+        {% endif %}
+        
+    </section>
+
+  </div>
+
+{% endblock %}

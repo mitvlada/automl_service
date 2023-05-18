@@ -1,0 +1,82 @@
+{% extends "base.html" %} 
+
+{% block styles %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('useModelViews.static', filename='css/styles.css') }}"
+/>
+{% endblock %}
+
+
+{% block content %}
+  <div class="content">
+
+    {% include 'model_navigation_bar.html' %}
+
+    <section class="model-info-section">
+      <div class="model-info-container">
+        <h3 class="model-info-heading">Framework</h3>
+        <p class="model-info">{{ model.framework }}</p>
+
+      </div>
+      <div class="model-info-break"></div>
+      <div class="model-info-container">
+        <h3 class="model-info-heading">Task</h3>
+        <p class="model-info">{{ model.task }}</p>
+      </div>
+      <div class="model-info-break"></div>
+      <div class="model-info-container">
+        <h3 class="model-info-heading">Metrics</h3>
+        <p class="model-info">
+          {% if not model.scores.__class__.__name__ == "str" %}
+          {% for metrics, score in model.scores.items() %}
+          {{ metrics }}: {{ score }} <br>
+          {% endfor %}
+          {% endif %}
+        </p>
+      </div>
+      <div class="model-info-break"></div>
+      <div class="model-info-container">
+        <h3 class="model-info-heading">Packages</h3>
+        <p class="model-info">
+          {% for package, version in model.requirements.items() %}
+          {{ package }}: {{ version }} <br>
+          {% endfor %}
+        </p>
+      </div>
+    </section>
+
+    <section class="prediction-section">
+      <h2 class="model-name-heading">{{ model.name }}</h2>
+      <div class="use-model-container">
+        <form id="prediction-form" class="new-data-form" method="POST" enctype="multipart/form-data">
+          <h3 class="feature-heading">Features</h3>
+          {{ form.hidden_tag() }}
+          {% for feature in form.features %}
+            <div class="feature-container">
+              <p class="feature-name">{{ feature }}</p> 
+              {{ form[feature](class_="feature-field") }}
+            </div>
+          {% endfor %}
+        </form>
+
+        <div class="submit-button-container">{{ form.submit(class_="new-data-submit", form="prediction-form") }}</div>
+    
+        <div class="prediction-container">
+          <h3 class="prediction-heading">Targets</h3>
+          {% for class in model["classes"] %}
+            <div class="class-container">
+              {% if target_predictions[class] is not none %}
+                <p class="class-value">{{ target_predictions[class] }}</p>
+              {% else %}
+                <p class="class-value"></p>
+              {% endif %}
+              <p class="class-name">{{ class }}</p>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+
+  </div>
+{% endblock %}
